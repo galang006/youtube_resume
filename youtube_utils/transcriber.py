@@ -1,22 +1,25 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 
-video_id = "UtSSMs6ObqY"  
+def get_transcript(video_url):
+    """
+    Fetch the transcript for a given YouTube video ID.
+    :param video_id: The ID of the YouTube video.
+    :return: The transcript of the video.
+    """
+    video_id = video_url.split('v=')[-1] if 'v=' in video_url else video_url.split('/')[-1]
 
-# Ambil transcript (subtitle)
-try:
-    ytt_api = YouTubeTranscriptApi()
-    fetched_transcript = ytt_api.fetch(video_id, languages=['en'])
+    transcript = {}
+    try:
+        ytt_api = YouTubeTranscriptApi()
+        fetched_transcript = ytt_api.fetch(video_id, languages=['en'])
 
-    # is iterable
-    # for snippet in fetched_transcript:
-    #     print(snippet.text)
+        for snippet in fetched_transcript:
+            transcript[snippet.start] = snippet.text
 
-    # indexable
-    last_snippet = fetched_transcript[-1]
-    print("Last snippet:", last_snippet)
-    # provides a length
-    snippet_count = len(fetched_transcript)
-    print("Total snippets:", snippet_count)
+        return transcript
+    
+    except Exception as e:
+        print("Error:", e)
 
-except Exception as e:
-    print("Error:", e)
+
+
