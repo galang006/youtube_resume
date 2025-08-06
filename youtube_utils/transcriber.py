@@ -2,7 +2,7 @@ import yt_dlp
 
 def download_subtitles(video_url, lang='en'):
     ydl_opts = {
-        'skip_download': True,  # Don't download video
+        'skip_download': True,
         'writeautomaticsub': True, 
         'writesubtitles': True,
         'subtitleslangs': [lang],
@@ -16,6 +16,5 @@ def download_subtitles(video_url, lang='en'):
         title = info.get('title', 'video')
         print(f"Subtitles downloaded for: {title}")
 
-# Example usage
 video_url = 'https://www.youtube.com/watch?v=UtSSMs6ObqY'
 download_subtitles(video_url, lang='en') 
