@@ -8,10 +8,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# The client gets the API key from the environment variable `GEMINI_API_KEY`.
-client = genai.Client(api_key=os.getenv("GEMINI_KEY"))
+def generate_content(contents, model = "gemini-2.5-flash"):
+    """
+    Generate content using the specified model and contents.
+    :param model: The model to use for content generation.
+    :param contents: The input contents for the model.
+    :return: The generated content response.
+    """
+    client = genai.Client(api_key=os.getenv("GEMINI_KEY"))
 
-response = client.models.generate_content(
-    model="gemini-2.5-flash", contents="Can you write resume from youtube transcript?",
-)
-print(response.text)
+    response = client.models.generate_content(
+        model=model, contents=contents,
+    )
+    
+    return response.text
