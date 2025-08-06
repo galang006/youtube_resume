@@ -1,20 +1,22 @@
-import yt_dlp
+from youtube_transcript_api import YouTubeTranscriptApi
 
-def download_subtitles(video_url, lang='en'):
-    ydl_opts = {
-        'skip_download': True,
-        'writeautomaticsub': True, 
-        'writesubtitles': True,
-        'subtitleslangs': [lang],
-        'subtitlesformat': 'vtt',  # or 'srt' if you prefer
-        'outtmpl': '%(title)s.%(ext)s',
-        'ratelimit': 100000, 
-    }
+video_id = "UtSSMs6ObqY"  
 
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        info = ydl.extract_info(video_url, download=True)
-        title = info.get('title', 'video')
-        print(f"Subtitles downloaded for: {title}")
+# Ambil transcript (subtitle)
+try:
+    ytt_api = YouTubeTranscriptApi()
+    fetched_transcript = ytt_api.fetch(video_id, languages=['en'])
 
-video_url = 'https://www.youtube.com/watch?v=UtSSMs6ObqY'
-download_subtitles(video_url, lang='en') 
+    # is iterable
+    # for snippet in fetched_transcript:
+    #     print(snippet.text)
+
+    # indexable
+    last_snippet = fetched_transcript[-1]
+    print("Last snippet:", last_snippet)
+    # provides a length
+    snippet_count = len(fetched_transcript)
+    print("Total snippets:", snippet_count)
+
+except Exception as e:
+    print("Error:", e)
