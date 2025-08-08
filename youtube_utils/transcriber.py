@@ -11,7 +11,7 @@ def get_transcript(video_url):
     transcript = {}
     try:
         ytt_api = YouTubeTranscriptApi()
-        fetched_transcript = ytt_api.fetch(video_id, languages=['en'])
+        fetched_transcript = ytt_api.fetch(video_id, languages=['en', 'id'])
 
         for snippet in fetched_transcript:
             transcript[snippet.start] = snippet.text

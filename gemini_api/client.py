@@ -21,7 +21,7 @@ def generate_content(transcript, model = "gemini-2.5-flash"):
         f"{transcript}\n\n"
         "The above is a dictionary with the format: "
         "{'timestamp_start': 'subtitle text'}.\n"
-        "Please create a concise summary of this transcript."
+        "Please create a summary of this transcript."
     )
 
     response = client.models.generate_content(
