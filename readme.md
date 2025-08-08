@@ -79,7 +79,3 @@ This project leverages the Gemini API to generate summaries of YouTube video tra
 API.
 - **`youtube_utils/`:** This directory likely contains the `youtube_utils.transcriber` module which handles fetching YouTube video transcripts.
 
-
-
-**Note:**  This documentation assumes the existence of `gemini_api` and `youtube_utils` libraries.  You will need to obtain and install these appropriately to 
-run this code.  The provided code snippet doesn't include the implementation details of these libraries.  Error handling (e.g., for API request failures or network issues) would be a necessary addition for a robust application.
