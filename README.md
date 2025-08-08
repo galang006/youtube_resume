@@ -13,8 +13,8 @@ This project leverages the Gemini API to generate summaries of YouTube video tra
 ## Prerequisites
 
 - **Python 3.7 or higher:** The code is written in Python and requires at least version 3.7.
-- **gemini-api:** This library provides the interface to the Gemini API. Install using pip.
-- **youtube_utils:** A library for fetching YouTube video transcripts.  You'll need to install this library.  The specific library used is not defined within the provided code.
+- **google:** This library provides the interface to the Gemini API. Install using pip.
+- **youtube_transcript_api:** A library for fetching YouTube video transcripts.
 - **A valid Gemini API key:**  This is crucial for interacting with the Gemini API and generating summaries. The key is typically set as an environment variable.
 
 
