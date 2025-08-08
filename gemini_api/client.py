@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def generate_content(contents, model = "gemini-2.5-flash"):
+def generate_content(transcript, model = "gemini-2.5-flash"):
     """
     Generate content using the specified model and contents.
     :param model: The model to use for content generation.
@@ -16,6 +16,13 @@ def generate_content(contents, model = "gemini-2.5-flash"):
     :return: The generated content response.
     """
     client = genai.Client(api_key=os.getenv("GEMINI_KEY"))
+
+    contents = (
+        f"{transcript}\n\n"
+        "The above is a dictionary with the format: "
+        "{'timestamp_start': 'subtitle text'}.\n"
+        "Please create a concise summary of this transcript."
+    )
 
     response = client.models.generate_content(
         model=model, contents=contents,
