@@ -1,7 +1,3 @@
-import warnings
-
-warnings.filterwarnings("ignore", message="Field name .* shadows an attribute in parent .*")
-
 from google import genai
 import os
 from dotenv import load_dotenv
