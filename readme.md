@@ -23,15 +23,14 @@ This project leverages the Gemini API to generate summaries of YouTube video tra
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/galang006/youtube_resume
    ```
-   (Replace `<repository_url>` with the actual repository URL).
 
 2. **Create a virtual environment (recommended):**
 
    ```bash
    python3 -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   source .venv/bin/activate  
    ```
 
 3. **Install dependencies:**
@@ -39,7 +38,6 @@ This project leverages the Gemini API to generate summaries of YouTube video tra
    ```bash
    pip install -r requirements.txt
    ```
-   *(You'll need to create a `requirements.txt` file listing `gemini-api` and `youtube_utils`.  Example `requirements.txt` below)*
 
    ```
    gemini-api
@@ -61,7 +59,7 @@ This project leverages the Gemini API to generate summaries of YouTube video tra
 1. **Activate your virtual environment:**
 
    ```bash
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   source .venv/bin/activate  
    ```
 
 2. **Run the script:**
@@ -77,9 +75,9 @@ This project leverages the Gemini API to generate summaries of YouTube video tra
 
 - **`main.py`:** This file contains the main logic of the program. It fetches the transcript, calls the Gemini API for content generation, and prints the results.
 - **`.gitignore`:** This file specifies files and directories to exclude from version control, notably `.env` to protect the API key.
-- **`gemini_api/` (Assumed Directory):**  This directory likely contains the `gemini_api.client` module which is responsible for communication with the Gemini 
+- **`gemini_api/`:**  This directory likely contains the `gemini_api.client` module which is responsible for communication with the Gemini 
 API.
-- **`youtube_utils/` (Assumed Directory):** This directory likely contains the `youtube_utils.transcriber` module which handles fetching YouTube video transcripts.
+- **`youtube_utils/`:** This directory likely contains the `youtube_utils.transcriber` module which handles fetching YouTube video transcripts.
 
 
 
