@@ -4,7 +4,6 @@ import os
 import re
 
 def clean_filename(filename):
-    # Hapus karakter ilegal di Windows: \ / : * ? " < > |
     return re.sub(r'[\\/:*?"<>|]', '_', filename)
 
 if __name__ == "__main__":
