@@ -35,10 +35,6 @@ This project leverages the Gemini API to generate summaries of YouTube video tra
 
 3. **Install dependencies:**
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-
    ```
    gemini-api
    youtube_utils
