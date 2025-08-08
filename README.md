@@ -71,7 +71,7 @@ This project leverages the Gemini API to generate summaries of YouTube video tra
 
 - **`main.py`:** This file contains the main logic of the program. It fetches the transcript, calls the Gemini API for content generation, and prints the results.
 - **`.gitignore`:** This file specifies files and directories to exclude from version control, notably `.env` to protect the API key.
-- **`gemini_api/`:**  This directory likely contains the `gemini_api.client` module which is responsible for communication with the Gemini 
+- **`gemini_api/`:**  This directory contains the `gemini_api.client` module which is responsible for communication with the Gemini 
 API.
-- **`youtube_utils/`:** This directory likely contains the `youtube_utils.transcriber` module which handles fetching YouTube video transcripts.
+- **`youtube_utils/`:** This directory contains the `youtube_utils.transcriber` module which handles fetching YouTube video transcripts.
 
