@@ -36,8 +36,8 @@ This project leverages the Gemini API to generate summaries of YouTube video tra
 3. **Install dependencies:**
 
    ```
-   gemini-api
-   youtube_utils
+   google
+   youtube_transcript_api
    ```
 
 4. **Set up your environment variables:**
