@@ -45,8 +45,8 @@ if st.button("Create a Summary"):
             progress.progress(60)
 
             status_text.text(f"🌍 Translate summary into {target_lang}...")
-            translate_prompt = f"Translate this text to {language_options[target_lang]}:\n\n{summary}"
-            translated_summary = generate_content(translate_prompt)
+            translate_prompt = f"Translate this text to {language_options[target_lang]}:\n\n"
+            translated_summary = generate_content(summary, prompt=translate_prompt)
             progress.progress(100)
 
             status_text.text("✅ Summary completed!")
